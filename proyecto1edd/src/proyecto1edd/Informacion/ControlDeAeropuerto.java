@@ -3,16 +3,23 @@ package proyecto1edd.Informacion;
 
 
 public class ControlDeAeropuerto {
-    private class Nodo{
-        public Nodo p;
-        public Nodo izq;
-        public Nodo der;
-        public int llave;
-        public Object valor;
-        
+    public Nodo Inicio;
+    public Nodo fin;
+    public ControlDeAeropuerto(){
+        Inicio = null;
+        fin=null;
     }
-    ControlDeAeropuerto(){
-        //control//
+    public void InsertarInicio(Object dato){
+        if(Inicio==null){
+            Inicio= new Nodo(dato,null,null);
+            fin=Inicio;
+        }
+        else{
+            Nodo nuevo = new Nodo(dato,null,Inicio);
+            Inicio.setAnterior(nuevo);
+            Inicio =nuevo;
+        }
+        
     }
     
 }
